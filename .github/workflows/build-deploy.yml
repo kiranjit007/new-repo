@@ -20,10 +20,8 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ AKIATTS4GTU3VCSE4WEZ
- }}
-          aws-secret-access-key: ${{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
-}}
+          aws-access-key-id: ${{AKIATTS4GTU3VCSE4WEZ}}
+          aws-secret-access-key: ${{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}}
           aws-region: ap-south-1
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
