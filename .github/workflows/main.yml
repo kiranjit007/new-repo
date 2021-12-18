@@ -22,7 +22,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AKIATTS4GTU3VCSE4WEZ}}
           aws-secret-access-key: ${{ secrets.QepUAq2Cp5gjYAtJRpdTJfJOngN6J3lTz3gDSaOa}}
-          aws-region: Asia Pacific (Mumbai) ap-south-1
+          aws-region: ap-south-1
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
