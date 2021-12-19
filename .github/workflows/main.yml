@@ -9,6 +9,6 @@ jobs:
   build: 
     runs-on: ubuntu-latest
     steps:
-    - uses: action/checkout@v1
+    - uses: action/new-repo@v1
     - name: main to s3
       run: bash scripts/pipeline/main.sh ${{secrets.new-one-bucket}} "folder/index.html.txt" ${{secrets.ACCESSKEYID}} ${{secrets.SECRETACCESSKEY}} "folder/index.html.tx"
