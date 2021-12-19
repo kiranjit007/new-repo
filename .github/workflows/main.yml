@@ -6,22 +6,9 @@ on:
       - master
 
 jobs:
-  deploy:
+  build: 
     runs-on: ubuntu-latest
     steps:
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.ACCESSKEYID }}
-          aws-secret-access-key: ${{ secrets.SECRETACCESSKEY }}
-          aws-region: ap-south-1
-      - name: Use Node.js 12.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - name: Install dependencies
-        run: yarn
-      - name: Build
-        run: yarn build
-      - name: Deploy
-        run: aws s3 sync ./out s3://new-one-bucket
+    - uses: action/checkout@v1
+    - name: main to s3
+      run: bash scripts/pipeline/main.sh ${{secrets.new-one-bucket}} "folder/index.html.txt" ${{secrets.ACCESSKEYID}} ${{secrets.SECRETACCESSKEY}} "folder/index.html.tx"
